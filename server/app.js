@@ -4,6 +4,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 
+import candidateRoutes from "./src/routes/candidate.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
 
 const app = express();
@@ -24,7 +25,8 @@ app.get("/", (req, res) => {
   });
 });
 
-// Auth Routes
+// Routes
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/candidate", candidateRoutes);
 
 export default app;
