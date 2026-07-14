@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 
 import candidateRoutes from "./src/routes/candidate.routes.js";
 import authRoutes from "./src/routes/auth.routes.js";
+import jobRoutes from "./src/routes/job.routes.js";
 
 const app = express();
 
@@ -28,5 +29,6 @@ app.get("/", (req, res) => {
 // Routes
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/candidate", candidateRoutes);
+app.use("/api/v1/jobs", jobRoutes);
 
 export default app;
